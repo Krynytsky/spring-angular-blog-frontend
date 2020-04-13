@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "spring-angular-blog-frontend"
+    }
+  },
+  "defaultProject": "spring-angular-blog-frontend",
+  "cli": {
+    "analytics": false
+  }
 }
