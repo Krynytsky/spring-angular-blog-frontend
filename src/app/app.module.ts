@@ -5,21 +5,17 @@ import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {HeaderComponent} from './header/header.component';
 import {RegisterComponent} from './auth/register/register.component';
-import {RegisterSucessComponent} from './auth/register-sucess/register-sucess.component';
+import {RegisterSuccessComponent} from './auth/register-sucess/register-success.component';
 import {LoginComponent} from './auth/login/login.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {RouterModule, Routes} from '@angular/router';
 import {HttpClientModule} from '@angular/common/http';
 
-// const appRoutes: Routes = [
-//   { path: 'register', component: RegisterComponent }
-// ];
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     RegisterComponent,
-    RegisterSucessComponent,
+    RegisterSuccessComponent,
     LoginComponent
   ],
   imports: [
@@ -27,16 +23,6 @@ import {HttpClientModule} from '@angular/common/http';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    RouterModule.forRoot(
-      [
-        { path: 'register', component: RegisterComponent }
-      ]
-      // appRoutes,
-      // { enableTracing: true }
-      ),
-    //
-    //   {path: 'register', component: RegisterComponent},
-    // ]),
     HttpClientModule
   ],
   providers: [],

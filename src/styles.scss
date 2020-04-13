@@ -1,10 +1,12 @@
 @import "~bootstrap/dist/css/bootstrap.css";
-*{
+
+* {
   margin: 0;
   padding: 0;
-  }
-html{
-  font-family: 'Lato', 'Arial',sans-serif;
+}
+
+html {
+  font-family: 'Lato', 'Arial', sans-serif;
   font-weight: 400;
   font-size: 18px;
   text-rendering: optimizeLegibility;
@@ -13,22 +15,27 @@ html{
 body {
   line-height: 1.5;
 }
+
 ol, ul {
   list-style: none;
 }
+
 blockquote, q {
   quotes: none;
 }
+
 blockquote:before, blockquote:after,
 q:before, q:after {
   content: '';
   content: none;
 }
+
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
-a{
-  text-decoration: none;
 
+a {
+  text-decoration: none;
 }
+
