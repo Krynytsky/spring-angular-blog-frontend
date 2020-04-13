@@ -1,6 +1,7 @@
 header {
   padding: 5px;
-  background-color: lightsteelblue;
+  background-color: #000;
+  opacity: 0.8;
 }
 
 .title {
@@ -13,5 +14,13 @@ header {
 }
 
 .brand {
-  font-size: 35px;
+  margin-left: 20px;
+  font-weight: 700;
+  font-size: 40px;
+}
+.brand::after{
+  content: "\[KrynytskyiAgency\]";
+  display: block;
+  font-style: italic;
+  font-size: small;
 }
