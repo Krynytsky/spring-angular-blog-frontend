@@ -1,0 +1,17 @@
+<div class="content">
+  <div class="container">
+    <div class="row post align-content-center" *ngFor="let post of posts|async">
+      <div>
+        <h3><a href="/post/{{post.id}}" class="blog-title">{{post.title}}</a></h3>
+        <div>
+          <i class="fa fa-user"></i> Author:<p>{{post.username}}</p>
+        </div>
+        <p [innerHTML]="post.content"></p>
+        <div>
+          <a type="button" href="/post/{{post.id}}" class="read-more btn btn-info">Read More</a>
+<!--          <button  href="/" (click)="deletePost()" class="btn btn btn-danger">Delete Post</button>-->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

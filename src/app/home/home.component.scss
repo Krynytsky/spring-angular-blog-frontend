@@ -1,0 +1,17 @@
+.post {
+  padding: 1em;
+  margin-top: 10px;
+  font-size: 12px;
+  max-height: 200px;
+  background-color: white;
+  border-radius: 10px;
+  cursor: pointer;
+
+}
+.post:hover{
+  box-shadow: 3px 1px 12px #0069D9;
+}
+
+//.content {
+//  z-index: -200;
+//}

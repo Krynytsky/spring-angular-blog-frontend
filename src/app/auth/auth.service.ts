@@ -2,18 +2,41 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {RegisterPayload} from './register-payload';
 import {Observable} from 'rxjs';
+import {LoginPayload} from './login-payload';
+import {JwtAutResponse} from './jwt-aut-response';
+import {map} from 'rxjs/operators';
+import {LocalStorageService} from 'ngx-webstorage';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  private url = 'http://localhost:8080/api/auth/';
-  // private url = 'http://18.191.136.234:8080/api/auth/';
+  // private url = 'http://localhost:8080/api/auth/';
+  // AWS
+   private url = 'http://18.217.227.164:8080/api/auth/';
 
-  constructor(private  httpClient: HttpClient) {
+  constructor(private  httpClient: HttpClient, private localStorageService: LocalStorageService) {
   }
 
   register(registerPayload: RegisterPayload): Observable<any> {
     return this.httpClient.post(this.url + 'signup', registerPayload);
+  }
+
+  login(loginPayload: LoginPayload): Observable<boolean> {
+    return this.httpClient.post<JwtAutResponse>(this.url + 'login', loginPayload)
+      .pipe(map(data => {
+        this.localStorageService.store('authenticationToken', data.authenticationToken);
+        this.localStorageService.store('email', data.email);
+        return true;
+      }));
+  }
+
+  isAuthenticated(): boolean {
+    return this.localStorageService.retrieve('email') != null;
+  }
+
+  logout() {
+    this.localStorageService.clear('authenticationToken');
+    this.localStorageService.clear('email');
   }
 }

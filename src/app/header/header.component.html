@@ -1,13 +1,25 @@
 <header class="container-fluid">
-  <div class="row align-items-md-baseline justify-content-md-between">
+  <div class="row align-items-center justify-content-center">
     <!--      Title-->
-    <div class="title col-md-3">
-      <h1 class="brand">KYB</h1>
+    <div class="col-md-2 col-sm-12">
+      <a routerLink="/home"><h1 class="brand">KYB</h1></a>
+    </div>
+
+    <!--    Social Icons-->
+    <div class="col-md-5 col-sm-12">
+      <a href="#" class="icons-white"><i class=" fa fa-github"></i></a>
+      <a href="#" class="icons-white"><i class=" fa fa-google"></i></a>
+      <a href="#" class="icons-white"><i class=" fa fa-facebook"></i></a>
+    </div>
+
+    <div class="col-md-3 col-sm-12 add-post " *ngIf="authService.isAuthenticated()">
+      <a routerLink="/add-post" class="icons-white"> <span class="fw-700 font-italic btn btn-light"><i class=" fa fa-plus"></i>Add Post</span></a>
+      <button routerLink="/logout" class="logout  p-1 fw-700 mr-2 btn btn-danger" (click)="logout()">Logout</button>
     </div>
     <!--      Login & Register-->
-    <div class="col-md-2 ">
-      <a routerLink="/login" class="login btn btn-light">Login</a>
-      <a routerLink="/register" class="register btn btn-secondary" routerLinkActive="active">Register</a>
+    <div class="col-md-2 col-sm-12" *ngIf="!authService.isAuthenticated()">
+      <a routerLink="/login" class="login  p-1 fw-700 mr-2 btn btn-primary">Login</a>
+      <a routerLink="/register" class="register p-1 fw-700 btn btn-secondary" routerLinkActive="active">Register</a>
     </div>
   </div>
 </header>

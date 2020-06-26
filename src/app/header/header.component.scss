@@ -1,26 +1,39 @@
+
 header {
-  padding: 5px;
   background-color: #000;
-  opacity: 0.8;
 }
 
-.title {
-  color: aliceblue;
-  text-decoration: none;
+.fw-700 {
+  font-weight: 700;
 }
 
 .login {
-  margin: 5px;
+  margin-right: 1rem;
 }
 
 .brand {
-  margin-left: 20px;
   font-weight: 700;
-  font-size: 40px;
+  font-size: 2rem;
+  color: #fff;
+  text-decoration: none;
 }
-.brand::after{
+
+.brand::after {
   content: "\[KrynytskyiAgency\]";
   display: block;
   font-style: italic;
   font-size: small;
+}
+
+.icons-white {
+  font-size: 1.25rem;
+  color: #fff;
+  text-decoration: none;
+  margin-right: 1rem;
+}
+
+.add-post {
+  a, span {
+    font-size: small;
+  }
 }
